@@ -1,7 +1,7 @@
 # TODO App
 
-This a todo application running on user's machine, keeping all data on the machine. It uses local storage. 
-The app is written by Javascript, HTML and CSS.
+This is a todo application running on user's machine, keeping all data local and safe. It uses local storage with features like adding, editing, deleting, and modifying each todo in the table.
+The tech stack is: Javascript, HTML and CSS.
 
 ## live url:
 https://hamedsamavati.github.io/todo-app/
