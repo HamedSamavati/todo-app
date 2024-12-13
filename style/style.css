@@ -2,16 +2,22 @@
   box-sizing: border-box;
   margin: 0;
   padding: 0;
-  font-family: Arial, Helvetica, sans-serif, "Lucida Sans", Arial, sans-serif;
+  font-family: "Afacad Flux", Arial, Helvetica, sans-serif;
   color: #22223b;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  -o-user-select: none;
+  user-select: none;
 }
 
 body {
-  background: #f9f7f3;
+  background: #3364a5;
 }
 
 main {
-  width: max(50vw, 700px);
+  width: min(96vw, 800px);
   margin: 2em auto;
   display: flex;
   flex-direction: column;
@@ -20,63 +26,136 @@ main {
 }
 
 #input-menu {
-  box-shadow: 5px 5px 15px #d6d8d7;
+  box-shadow: 5px 5px 15px #012a5f, -3px -3px 18px #5db1df;
   width: 100%;
-  background: #ffffff;
+  background: #012a5f;
+  color: #ffffff;
   padding: 1.5em;
   border-radius: 0.4em;
   margin-bottom: 2em;
 }
+#input-menu .active {
+  background: #fca311;
+  color: #012a5f;
+  font-weight: 800;
+  cursor: pointer;
+  transition: all 0.5s ease;
+}
 #input-menu h1 {
+  color: #ffffff;
   padding: 1em 0;
   text-align: center;
 }
 #input-menu input {
-  border: #0fa3b1 1px solid;
+  border: none;
+  box-shadow: 3px 3px 3px #22223b, -3px -3px 15px #5db1df;
+  outline: none;
   border-radius: 0.2em;
-  padding: 0.4em;
+  padding: 0.5em;
+  margin: 0.5em;
   width: 45%;
+  color: #012a5f;
+  height: 2.4em;
+  width: min(70vw, 70%);
+}
+@media screen and (max-width: 480px) {
+  #input-menu input {
+    width: min(90vw, 90%);
+  }
+}
+#input-menu #input-date {
+  width: min(40vw, 40%);
+}
+@media screen and (max-width: 480px) {
+  #input-menu #input-date {
+    width: min(90vw, 90%);
+  }
 }
 #input-menu button {
   border: none;
   padding: 0.55em 0.8em;
   border-radius: 0.2em;
-  background-color: #0fa3b1;
+  background-color: #3364a5;
   color: #ffffff;
   font-weight: 500;
+  margin: 0.2em;
+}
+#input-menu button:hover {
+  background: #fca311;
+  color: #012a5f;
+  font-weight: 800;
+  cursor: pointer;
+  transition: all 0.5s ease;
 }
 #input-menu #first-row {
+  padding: 0 min(60px, 5vw);
   margin-bottom: 2em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#input-menu #first-row button {
+  padding: 5px 15px;
+  height: 2.4em;
+}
+@media screen and (max-width: 480px) {
+  #input-menu #first-row button {
+    width: min(90vw, 90%);
+  }
+}
+@media screen and (max-width: 480px) {
+  #input-menu #first-row {
+    flex-direction: column;
+  }
 }
 #input-menu #second-row {
+  padding: 0 min(60px, 5vw);
   display: flex;
   justify-content: space-between;
 }
+@media screen and (max-width: 480px) {
+  #input-menu #second-row {
+    flex-direction: column-reverse;
+    padding: 0 37px;
+  }
+  #input-menu #second-row #selectors {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+  }
+  #input-menu #second-row #selectors button {
+    width: 30%;
+  }
+}
 
 #todos-list {
-  box-shadow: 5px 5px 15px #d6d8d7;
   font-size: 0.8em;
   width: 100%;
 }
 #todos-list .action-button {
   border: none;
-  border-radius: 0.4em;
-  padding: 0.5em 0.8em;
-}
-#todos-list .edit-button {
-  background-color: #b5e2fa;
-}
-#todos-list .do-button {
-  background-color: #0fa3b1;
+  border-radius: 0.2em;
+  padding: 0.45em 0.8em;
+  background: #3364a5;
   color: #ffffff;
+  width: 5em;
+  font-size: 1em;
 }
-#todos-list .delete-button {
-  background: #f7a072;
+#todos-list .action-button:hover, #todos-list .action-button:active {
+  background: #fca311;
+  color: #012a5f;
+  font-weight: 800;
+  cursor: pointer;
+  transition: all 0.5s ease;
 }
 #todos-list table tr:first-child th:first-child {
   border-top-left-radius: 6px;
 }
 #todos-list table {
+  box-shadow: 5px 5px 15px #012a5f, -3px -3px 18px #5db1df;
+  border-collapse: collapse;
   border-radius: 0.5em;
   width: 100%;
 }
@@ -87,13 +166,31 @@ main {
   border-top-right-radius: 6px;
 }
 #todos-list table thead {
-  background: #eddea4;
-  line-height: 2.5em;
+  border-bottom: #ffffff 1px solid;
+  background: #012a5f;
+  line-height: 3em;
+}
+#todos-list table thead th {
+  color: #ffffff;
+  font-weight: 400;
+  font-size: 1.3em;
 }
 #todos-list table tbody {
-  background: #ffffff;
+  background: #012a5f;
   line-height: 2.5em;
   text-align: center;
+}
+#todos-list table tbody tr {
+  border-bottom: #ffffff 1px solid;
+}
+@media screen and (max-width: 480px) {
+  #todos-list table tbody tr:last-child {
+    display: flex;
+  }
+}
+#todos-list table tbody td {
+  font-size: 1em;
+  color: #ffffff;
 }
 
 /*# sourceMappingURL=style.css.map */

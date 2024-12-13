@@ -3,6 +3,7 @@ const dateInput = document.getElementById("input-date");
 const addBtn = document.getElementById("add-btn");
 const table = document.querySelector("table");
 const deleteAllBtn = document.getElementById("delete-all");
+const categoryBtns = document.querySelectorAll(".selector");
 
 const deleteHandler = (event) => {
   const row = event.target.parentElement.parentElement;
@@ -59,7 +60,19 @@ const tableSnapshot = () => {
   localStorage.setItem("table", tableString);
 };
 
+const activateBtn = (target) => {
+  categoryBtns.forEach((btn) => {
+    if (
+      btn.textContent === target.textContent ||
+      btn.classList.contains("active")
+    ) {
+      btn.classList.toggle("active");
+    }
+  });
+};
+
 const showCategoryHandler = (event) => {
+  activateBtn(event.target);
   const rows = document.querySelectorAll("tbody tr");
   rows.forEach((row) => {
     if (event.target.textContent === "All") {
@@ -74,7 +87,6 @@ const showCategoryHandler = (event) => {
     }
   });
 };
-const categoryBtns = document.querySelectorAll(".selector");
 categoryBtns.forEach((categoryBtn) => {
   categoryBtn.addEventListener("click", showCategoryHandler);
 });
