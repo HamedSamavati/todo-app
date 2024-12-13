@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Todos | Samavati.ir</title>
+    <link rel="stylesheet" href="./style/style.css" />
+    <link rel="shortcut icon" href="./images/logo.png" />
+  </head>
+  <body>
+    <main>
+      <section id="input-menu">
+        <header>
+          <h1>Todo app | Samavati.ir</h1>
+          <form action="#">
+            <div id="first-row">
+              <input id="input-text" type="text" placeholder="Add todo ..." />
+              <input id="input-date" type="date" />
+              <button id="add-btn">Add</button>
+            </div>
+            <div id="second-row">
+              <div id="selectors">
+                <button id="all" class="selector">All</button>
+                <button id="pending" class="selector">Pending</button>
+                <button id="completed" class="selector">Completed</button>
+              </div>
+              <button id="delete-all">Delete All</button>
+            </div>
+          </form>
+        </header>
+      </section>
+
+      <section id="todos-list">
+        <table>
+          <thead>
+            <tr>
+              <th>Task</th>
+              <th>Date</th>
+              <th>Status</th>
+              <th>Action</th>
+            </tr>
+          </thead>
+          <tbody></tbody>
+        </table>
+      </section>
+    </main>
+
+    <script src="./js/app.js"></script>
+  </body>
+</html>

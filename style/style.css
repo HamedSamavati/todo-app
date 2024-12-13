@@ -1,0 +1,99 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: Arial, Helvetica, sans-serif, "Lucida Sans", Arial, sans-serif;
+  color: #22223b;
+}
+
+body {
+  background: #f9f7f3;
+}
+
+main {
+  width: max(50vw, 700px);
+  margin: 2em auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+#input-menu {
+  box-shadow: 5px 5px 15px #d6d8d7;
+  width: 100%;
+  background: #ffffff;
+  padding: 1.5em;
+  border-radius: 0.4em;
+  margin-bottom: 2em;
+}
+#input-menu h1 {
+  padding: 1em 0;
+  text-align: center;
+}
+#input-menu input {
+  border: #0fa3b1 1px solid;
+  border-radius: 0.2em;
+  padding: 0.4em;
+  width: 45%;
+}
+#input-menu button {
+  border: none;
+  padding: 0.55em 0.8em;
+  border-radius: 0.2em;
+  background-color: #0fa3b1;
+  color: #ffffff;
+  font-weight: 500;
+}
+#input-menu #first-row {
+  margin-bottom: 2em;
+}
+#input-menu #second-row {
+  display: flex;
+  justify-content: space-between;
+}
+
+#todos-list {
+  box-shadow: 5px 5px 15px #d6d8d7;
+  font-size: 0.8em;
+  width: 100%;
+}
+#todos-list .action-button {
+  border: none;
+  border-radius: 0.4em;
+  padding: 0.5em 0.8em;
+}
+#todos-list .edit-button {
+  background-color: #b5e2fa;
+}
+#todos-list .do-button {
+  background-color: #0fa3b1;
+  color: #ffffff;
+}
+#todos-list .delete-button {
+  background: #f7a072;
+}
+#todos-list table tr:first-child th:first-child {
+  border-top-left-radius: 6px;
+}
+#todos-list table {
+  border-radius: 0.5em;
+  width: 100%;
+}
+#todos-list table tr:first-child th:first-child {
+  border-top-left-radius: 6px;
+}
+#todos-list table tr:last-child th:last-child {
+  border-top-right-radius: 6px;
+}
+#todos-list table thead {
+  background: #eddea4;
+  line-height: 2.5em;
+}
+#todos-list table tbody {
+  background: #ffffff;
+  line-height: 2.5em;
+  text-align: center;
+}
+
+/*# sourceMappingURL=style.css.map */

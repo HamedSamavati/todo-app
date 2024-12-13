@@ -1,0 +1,107 @@
+$green: #0fa3b1;
+$blue: #b5e2fa;
+$cream: #f9f7f3;
+$white: #ffffff;
+$gold: #eddea4;
+$orange: #f7a072;
+$dark: #22223b;
+$gray: #d6d8d7;
+$shadow: 5px 5px 15px $gray;
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: Arial, Helvetica, sans-serif, "Lucida Sans", Arial, sans-serif;
+  color: $dark;
+}
+body {
+  background: $cream;
+}
+main {
+  width: max(50vw, 700px);
+  margin: 2em auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+#input-menu {
+  box-shadow: $shadow;
+  width: 100%;
+  background: $white;
+  padding: 1.5em;
+  border-radius: 0.4em;
+  margin-bottom: 2em;
+  h1 {
+    padding: 1em 0;
+    text-align: center;
+  }
+  input {
+    border: $green 1px solid;
+    border-radius: 0.2em;
+    padding: 0.4em;
+    width: 45%;
+  }
+  button {
+    border: none;
+    padding: 0.55em 0.8em;
+    border-radius: 0.2em;
+    background-color: $green;
+    color: $white;
+    font-weight: 500;
+  }
+  #first-row {
+    margin-bottom: 2em;
+  }
+  #second-row {
+    display: flex;
+    justify-content: space-between;
+  }
+}
+
+#todos-list {
+  box-shadow: $shadow;
+
+  font-size: 0.8em;
+  width: 100%;
+  .action-button {
+    border: none;
+    border-radius: 0.4em;
+    padding: 0.5em 0.8em;
+  }
+  .edit-button {
+    background-color: $blue;
+  }
+  .do-button {
+    background-color: $green;
+    color: $white;
+  }
+  .delete-button {
+    background: $orange;
+  }
+
+  table tr:first-child th:first-child {
+    border-top-left-radius: 6px;
+  }
+  table {
+    tr:first-child th:first-child {
+      border-top-left-radius: 6px;
+    }
+    tr:last-child th:last-child {
+      border-top-right-radius: 6px;
+    }
+    border-radius: 0.5em;
+    width: 100%;
+    thead {
+      background: $gold;
+      line-height: 2.5em;
+    }
+    tbody {
+      background: $white;
+      line-height: 2.5em;
+      text-align: center;
+    }
+  }
+}
