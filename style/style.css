@@ -1,3 +1,28 @@
+@keyframes fadein {
+  from {
+    bottom: 0;
+    opacity: 0;
+  }
+  to {
+    bottom: 590px;
+    opacity: 1;
+  }
+}
+@keyframes fadeout {
+  from {
+    bottom: 590px;
+    opacity: 1;
+  }
+  to {
+    bottom: 0;
+    opacity: 0;
+  }
+}
+#toast.show {
+  visibility: visible;
+  animation: fadein 0.5s, fadeout 0.5s 2.5s;
+}
+
 * {
   box-sizing: border-box;
   margin: 0;
@@ -25,6 +50,7 @@ main {
   align-items: center;
 }
 
+.toast,
 #input-menu {
   box-shadow: 5px 5px 15px #012a5f, -3px -3px 18px #5db1df;
   width: 100%;
@@ -34,6 +60,7 @@ main {
   border-radius: 0.4em;
   margin-bottom: 2em;
 }
+.toast .active,
 #input-menu .active {
   background: #fca311;
   color: #012a5f;
@@ -41,11 +68,13 @@ main {
   cursor: pointer;
   transition: all 0.5s ease;
 }
+.toast h1,
 #input-menu h1 {
   color: #ffffff;
   padding: 1em 0;
   text-align: center;
 }
+.toast input,
 #input-menu input {
   border: none;
   box-shadow: 3px 3px 3px #22223b, -3px -3px 15px #5db1df;
@@ -59,18 +88,22 @@ main {
   width: min(70vw, 70%);
 }
 @media screen and (max-width: 480px) {
+  .toast input,
   #input-menu input {
     width: min(90vw, 90%);
   }
 }
+.toast #input-date,
 #input-menu #input-date {
   width: min(40vw, 40%);
 }
 @media screen and (max-width: 480px) {
+  .toast #input-date,
   #input-menu #input-date {
     width: min(90vw, 90%);
   }
 }
+.toast button,
 #input-menu button {
   border: none;
   padding: 0.55em 0.8em;
@@ -80,6 +113,7 @@ main {
   font-weight: 500;
   margin: 0.2em;
 }
+.toast button:hover,
 #input-menu button:hover {
   background: #fca311;
   color: #012a5f;
@@ -87,6 +121,7 @@ main {
   cursor: pointer;
   transition: all 0.5s ease;
 }
+.toast #first-row,
 #input-menu #first-row {
   padding: 0 min(60px, 5vw);
   margin-bottom: 2em;
@@ -94,30 +129,36 @@ main {
   justify-content: center;
   align-items: center;
 }
+.toast #first-row button,
 #input-menu #first-row button {
   padding: 5px 15px;
   height: 2.4em;
 }
 @media screen and (max-width: 480px) {
+  .toast #first-row button,
   #input-menu #first-row button {
     width: min(90vw, 90%);
   }
 }
 @media screen and (max-width: 480px) {
+  .toast #first-row,
   #input-menu #first-row {
     flex-direction: column;
   }
 }
+.toast #second-row,
 #input-menu #second-row {
   padding: 0 min(60px, 5vw);
   display: flex;
   justify-content: space-between;
 }
 @media screen and (max-width: 480px) {
+  .toast #second-row,
   #input-menu #second-row {
     flex-direction: column-reverse;
     padding: 0 37px;
   }
+  .toast #second-row #selectors,
   #input-menu #second-row #selectors {
     display: flex;
     justify-content: space-between;
@@ -125,9 +166,27 @@ main {
     margin: 0;
     padding: 0;
   }
+  .toast #second-row #selectors button,
   #input-menu #second-row #selectors button {
     width: 30%;
   }
+}
+
+#toast {
+  background: #fca311;
+  visibility: hidden;
+  text-align: center;
+  color: #012a5f;
+  font-size: 1.1em;
+  padding: 0.5em;
+  margin-bottom: 0.5em;
+  line-height: 1em;
+  z-index: 10;
+  opacity: 0.95;
+  position: fixed;
+  bottom: 595px;
+  width: min(800px, 96vw);
+  border-radius: 2px;
 }
 
 #todos-list {

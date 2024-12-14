@@ -29,6 +29,7 @@ const editHandler = (event) => {
   dateInput.value = row.children[1].innerText;
   row.remove();
   tableSnapshot();
+  showToast("Todo is editing!");
 };
 
 const addHandlerToBtns = () => {
@@ -53,7 +54,6 @@ const reloadTable = () => {
     addHandlerToBtns();
   }
 };
-reloadTable();
 
 const tableSnapshot = () => {
   const tableString = JSON.stringify(encodeURIComponent(table.innerHTML));
@@ -87,9 +87,6 @@ const showCategoryHandler = (event) => {
     }
   });
 };
-categoryBtns.forEach((categoryBtn) => {
-  categoryBtn.addEventListener("click", showCategoryHandler);
-});
 
 const makeNewRow = (todo, date) => {
   let newRow = document.createElement("tr");
@@ -117,7 +114,7 @@ const addHandler = (e) => {
   const todo = todoInput.value;
   let date = dateInput.value;
   if (todo === "") {
-    alert("Please enter todo!");
+    showToast("Please enter a todo!");
   } else {
     if (date === "") {
       date = today();
@@ -129,9 +126,9 @@ const addHandler = (e) => {
     dateInput.value = "";
     addHandlerToBtns();
     tableSnapshot();
+    showToast("Todo is added!");
   }
 };
-addBtn.addEventListener("click", addHandler);
 
 const deleteAllHandler = (event) => {
   const rows = document.querySelectorAll("tbody tr");
@@ -139,5 +136,25 @@ const deleteAllHandler = (event) => {
     row.remove();
   });
   tableSnapshot();
+  showToast("Todos are deleted!");
 };
-deleteAllBtn.addEventListener("click", deleteAllHandler);
+
+const start = () => {
+  reloadTable();
+  categoryBtns.forEach((categoryBtn) => {
+    categoryBtn.addEventListener("click", showCategoryHandler);
+  });
+  addBtn.addEventListener("click", addHandler);
+  deleteAllBtn.addEventListener("click", deleteAllHandler);
+};
+
+const showToast = (text) => {
+  const toast = document.querySelector("#toast");
+  toast.textContent = text;
+  toast.classList.toggle("show");
+  setTimeout(function () {
+    toast.classList.toggle("show");
+  }, 3000);
+};
+
+start();

@@ -32,6 +32,32 @@ $bottom-border: $white 1px solid;
   }
 }
 
+@keyframes fadein {
+  from {
+    bottom: 0;
+    opacity: 0;
+  }
+  to {
+    bottom: 590px;
+    opacity: 1;
+  }
+}
+
+@keyframes fadeout {
+  from {
+    bottom: 590px;
+    opacity: 1;
+  }
+  to {
+    bottom: 0;
+    opacity: 0;
+  }
+}
+#toast.show {
+  visibility: visible;
+  animation: fadein 0.5s, fadeout 0.5s 2.5s;
+}
+
 * {
   box-sizing: border-box;
   margin: 0;
@@ -56,7 +82,7 @@ main {
   justify-content: center;
   align-items: center;
 }
-
+.toast,
 #input-menu {
   box-shadow: $shadow;
   width: 100%;
@@ -145,6 +171,23 @@ main {
       }
     }
   }
+}
+
+#toast {
+  background: $yellow;
+  visibility: hidden;
+  text-align: center;
+  color: $dark;
+  font-size: 1.1em;
+  padding: 0.5em;
+  margin-bottom: 0.5em;
+  line-height: 01em;
+  z-index: 10;
+  opacity: 0.95;
+  position: fixed;
+  bottom: 595px;
+  width: min(800px, 96vw);
+  border-radius: 2px;
 }
 
 #todos-list {
